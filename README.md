@@ -28,9 +28,9 @@ require "dbgrapher/rake_task"
 Dbgrapher::RakeTask.new()
 ```
 
-Then run rake
+Then run
 
-    dbgrapher:gen
+    rake dbgrapher:gen
 
 In the `db/schema directory` it will generate `dbgrapher.json` file.
 Now in your browser (preferably chrome) navigate to [dbgrapher.com](https://dbgrapher.com). In the "Please select a cloud provider." dialog select "None". In the following dialog select "Open". Open the `db/schema/dbgrapher.json` file. Move the tables to appropriate positions. Then from "File" top menu select save. In case you're not using chrome you should select "Download" from "File" top menu and copy the downloaded file to the `db/schema/dbgrapher.json`.
