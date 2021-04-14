@@ -1,8 +1,8 @@
+[![CI](https://github.com/ayeressian/dbgrapher_gem/actions/workflows/ci.yml/badge.svg)](https://github.com/ayeressian/dbgrapher_gem/actions/workflows/ci.yml)
+
 # Dbgrapher
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dbgrapher`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a library that provides rake task to be used with rails application to generate dbgrapher.com db schema file.
 
 ## Installation
 
@@ -20,7 +20,22 @@ Or install it yourself as:
 
     $ gem install dbgrapher
 
-TODO: Write usage instructions here
+In the lib/tasks directory create dbgrapher.rake file with the following content
+
+```ruby
+require "dbgrapher/rake_task"
+
+Dbgrapher::RakeTask.new()
+```
+
+Then run rake
+
+    dbgrapher:gen
+
+In the `db/schema directory` it will generate `dbgrapher.json` file.
+Now in your browser (preferably chrome) navigate to [dbgrapher.com](https://dbgrapher.com). In the "Please select a cloud provider." dialog select "None". In the following dialog select "Open". Open the `db/schema/dbgrapher.json` file. Move the tables to appropriate positions. Then from "File" top menu select save. In case you're not using chrome you should select "Download" from "File" top menu and copy the downloaded file to the `db/schema/dbgrapher.json`.
+Every time a new table is being added to the database the top procedure should be performed. Note its only necessary to position the newly added tables, the previously positioned table positions are persisted.
+Don't forget to commit your dbgrapher.json file. It contains information about the table positions.
 
 ## Development
 
