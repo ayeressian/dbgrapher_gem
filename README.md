@@ -1,4 +1,5 @@
 [![CI](https://github.com/ayeressian/dbgrapher_gem/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ayeressian/dbgrapher_gem/actions/workflows/ci.yml)
+[![Gem Version](https://badge.fury.io/rb/dbgrapher.svg)](https://badge.fury.io/rb/dbgrapher)
 
 # Dbgrapher
 
@@ -28,14 +29,17 @@ require "dbgrapher/rake_task"
 Dbgrapher::RakeTask.new()
 ```
 
-Then run
+If everything is setup correctlly `rake -T dbgrapher` should return `rake dbgrapher:gen  # Generates dbgrapher.json`.
 
-    rake dbgrapher:gen
-
-In the `db/schema directory` it will generate `dbgrapher.json` file.
-Now in your browser (preferably chrome) navigate to [dbgrapher.com](https://dbgrapher.com). In the "Please select a cloud provider." dialog select "None". In the following dialog select "Open". Open the `db/schema/dbgrapher.json` file. Move the tables to appropriate positions. Then from "File" top menu select save. In case you're not using chrome you should select "Download" from "File" top menu and copy the downloaded file to the `db/schema/dbgrapher.json`.
+## Usage
+### Generation
+To generate schema run `rake dbgrapher:gen`. In the `db/schema directory` it will generate `dbgrapher.json` file.
+Now in your browser (preferably chrome) navigate to [dbgrapher.com](https://dbgrapher.com). In the "Please select a cloud provider" dialog select "None". In the following dialog select "Open". Open the `db/schema/dbgrapher.json` file. Move the tables to appropriate positions. Then from "File" top menu select save. In case you're not using chrome you should select "Download" from "File" top menu and copy the downloaded file to the `db/schema/dbgrapher.json`.
 Every time a new table is being added to the database the top procedure should be performed. Note its only necessary to position the newly added tables, the previously positioned table positions are persisted.
 Don't forget to commit your dbgrapher.json file. It contains information about the table positions.
+
+### View
+To view the schema in the browser navigate to [dbgrapher.com](https://dbgrapher.com). In the "Please select a cloud provider" dialog select "None". In the following dialog select "Open". Open the `db/schema/dbgrapher.json` file.
 
 ## Development
 
