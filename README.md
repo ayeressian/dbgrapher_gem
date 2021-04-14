@@ -1,4 +1,6 @@
-[![CI](https://github.com/ayeressian/dbgrapher_gem/actions/workflows/ci.yml/badge.svg)](https://github.com/ayeressian/dbgrapher_gem/actions/workflows/ci.yml)
+[![CI](https://github.com/ayeressian/dbgrapher_gem/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ayeressian/dbgrapher_gem/actions/workflows/ci.yml)
+
+# Dbgrapher
 
 # Dbgrapher
 
