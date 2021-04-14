@@ -2,8 +2,6 @@
 
 # Dbgrapher
 
-# Dbgrapher
-
 This is a library that provides rake task to be used with rails application to generate dbgrapher.com db schema file.
 
 ## Installation
@@ -47,5 +45,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/dbgrapher.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ayeressian/dbgrapher_gem.
 
