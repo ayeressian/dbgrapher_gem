@@ -4,9 +4,9 @@ Gem::Specification.new do |spec|
   spec.name          = "dbgrapher"
   spec.version       = Dbgrapher::VERSION
   spec.authors       = ["Ara Yeressian"]
-  spec.email         = ["ara.yeressian@vineti.com"]
+  spec.email         = ["yeressian@tuta.io"]
 
-  spec.summary       = "test"
+  spec.summary       = "This library provides rake task to be used with rails application to generate dbgrapher.com db schema file"
   # spec.description   = %q{TODO: Write a longer description or delete this line.}
   # spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   # spec.metadata["homepage_uri"] = spec.homepage
-  # spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
+  spec.metadata["source_code_uri"] = "https://github.com/ayeressian/dbgrapher_gem"
   # spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
 
   # Specify which files should be added to the gem when it is released.
