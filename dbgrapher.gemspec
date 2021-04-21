@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ara Yeressian"]
   spec.email         = ["yeressian@tuta.io"]
 
-  spec.summary       = "This library provides rake task to be used with rails application to generate dbgrapher.com db schema file"
+  spec.summary       = "This library provides a rake task to be used with the rails application to generate dbgrapher.com db schema files"
   # spec.description   = %q{TODO: Write a longer description or delete this line.}
   # spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
