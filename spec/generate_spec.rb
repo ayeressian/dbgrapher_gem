@@ -42,15 +42,66 @@ RSpec.describe Dbgrapher::Generate do
   end
 
   it "parses correctlly" do
-    expected_result = { tables: [{ columns: [{ name: "id", pk: true, type: "int" },
-                                            { fk: { column: "id", table: "test_table2" },
-                                              name: "test_column_fk",
-                                              type: "string" }],
-                                  name: "test_table1" },
-                                { columns: [{ name: "id", pk: true, type: "int" },
-                                            { name: "test_column2", type: "string" }],
-                                  name: "test_table2" }] }
+    expected_result = {
+      tables: [
+        { columns: [
+          { name: "id", pk: true, type: "int" },
+          { fk: { column: "id", table: "test_table2" },
+            name: "test_column_fk",
+            type: "string" },
+        ],
+          name: "test_table1" },
+        { columns: [
+          { name: "id", pk: true, type: "int" },
+          { name: "test_column2", type: "string" },
+        ],
+          name: "test_table2" },
+      ],
+    }
     expect(JSON).to receive(:pretty_generate).with(expected_result)
     subject.run
+  end
+
+  describe "when dbgrapher.json file exists" do
+    before do
+      allow(File).to receive(:exists?) { true }
+      allow(File).to receive(:read) { }
+      allow(JSON).to receive(:parse) {
+        {
+          viewHeight: 500,
+          viewWidth: 500,
+          tables: [{ pos: { x: 128, y: 256 },
+                     name: "test_table1" }],
+        }
+      }
+    end
+
+    it "should merge newly created schema with the existing one" do
+      expected_result = {
+        viewHeight: 500,
+        viewWidth: 500,
+        tables: [
+          {
+            columns: [
+              { name: "id", pk: true, type: "int" },
+              { fk: { column: "id", table: "test_table2" },
+                name: "test_column_fk",
+                type: "string" },
+            ],
+            pos: { x: 128, y: 256 },
+            name: "test_table1",
+          },
+          {
+            columns: [
+              { name: "id", pk: true, type: "int" },
+              { name: "test_column2", type: "string" },
+            ],
+            name: "test_table2",
+          },
+        ],
+      }
+      expect(JSON).to receive(:pretty_generate).with(expected_result)
+      subject.run
+    end
   end
 end
